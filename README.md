@@ -1,4 +1,4 @@
-Snapshot tools for linux deepin.
+A nice screenshooter written in python.
 
 
 This is a fork of https://github.com/linuxdeepin-packages/deepin-scrot
