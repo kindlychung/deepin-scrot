@@ -32,8 +32,8 @@ class tipWindow():
     def __init__(self, content):
         ''' Init tip Window'''
         screenWidth, screenHeight = gtk.gdk.get_default_root_window().get_size()
-        self.delta = 0.01
-        self.alpha = 1
+        self.delta = 0.1
+        self.alpha = .1
         self.paddingX = 10
         self.content = content
         
@@ -56,7 +56,7 @@ class tipWindow():
         
         # Create tooltips label.
         self.label = gtk.Label()
-        self.label.set_markup("<span foreground='#00AEFF' size='12000'>%s</span>" % (content))
+        self.label.set_markup("<span foreground='#0000FF' size='12000'>%s</span>" % (content))
         self.label.set_single_line_mode(True) # just one line
         self.align = gtk.Alignment()
         self.align.set(0.5, 0.5, 0, 0)
@@ -73,8 +73,8 @@ class tipWindow():
         widget.set_opacity(self.alpha)
         cr = widget.window.cairo_create()
         width, height = widget.window.get_size()
-        cr.set_source_rgb(0.14, 0.13, 0.15)
-        drawRoundRectangle(cr, 0, 0, width, height, 4)
+        cr.set_source_rgb(0.14, 0.93, 0.95)
+        drawRoundRectangle(cr, 0, 0, width, height, 0)
         cr.fill_preserve()
         cr.stroke()
 
@@ -112,7 +112,7 @@ class countdownWindow():
         self.tipWindow.modify_fg(gtk.STATE_NORMAL, gtk.gdk.color_parse("black"))
         self.tipWindow.set_accept_focus(False)
         self.tipWindow.set_icon_from_file("../theme/logo/deepin-scrot.ico")
-        self.tipWindow.set_opacity(0.8)
+        self.tipWindow.set_opacity(0.2)
         self.tipWindow.move(screenWidth - 200 , 34)
         self.tipWindow.connect('expose-event', self.tipExpose)
         self.tipWindow.connect("size-allocate", lambda w, a: updateShape(w, a, 4))

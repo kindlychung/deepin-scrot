@@ -56,11 +56,18 @@ class MainScrot:
 		self.x = self.y = self.rectWidth = self.rectHeight = 0
 		self.buttonToggle = None
 		
-		self.frameColor = "#00AEFF"# "#FFFF0" 
-		self.frameLineWidth = 2
+###########################################################
+###### self.frameColor is important!!  set to white here ##
+###### self.frameLineWidth is important!!  set to 0 here ##
+###########################################################
+		self.frameColor = "#FFFFFF" # "#FFFF0" 
+		self.frameLineWidth = 0
 		self.dragPosition = None
 		self.dragStartX = self.dragStartY = self.dragStartOffsetX = self.drawStartOffsetY = 0
-		self.dragPointRadius = 4
+############################################################
+###### self.dragPointRadius is important!!  set to 0 here ##
+############################################################
+		self.dragPointRadius = 0
 		
 		self.dragFlag = False
 		self.showToolbarFlag = False
@@ -158,7 +165,7 @@ class MainScrot:
 		
 		self.colorbarWindow.set_decorated(False)
 		self.colorbarWindow.set_resizable(False)
-		self.colorbarWindow.set_default_size(100, 24)
+		self.colorbarWindow.set_default_size(100, 54)
 
 		self.colorbarWindow.set_size_request(
 			-1,
@@ -1226,7 +1233,9 @@ class MainScrot:
 		cr.set_source_rgba(0, 0, 0, 0.5)
 		cr.rectangle(x + rectWidth, y, self.width - x - rectWidth, rectHeight)
 		cr.fill()
-		
+	
+###########################################################
+###### self.frameColor is important!! #####################
 	def drawFrame(self, cr):
 		'''Draw frame.'''
 		cr.set_source_rgb(*colorHexToCairo(self.frameColor))

@@ -155,7 +155,7 @@ class DeepinScrotSetup:
         # window.set_decorated(False)
         window.set_position(gtk.WIN_POS_CENTER)
         window.set_title("Deepin Scrot")
-        window.set_default_size(300, 517)
+        window.set_default_size(30, 51)
         window.set_resizable(False)
         window.set_icon_from_file("../theme/logo/deepin-scrot.ico")
         
